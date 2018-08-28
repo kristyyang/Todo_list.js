@@ -29,6 +29,7 @@ document.getElementById('add').addEventListener('click',function(){
         document.getElementById('item').value= '';
 
         data.todo.push(value);
+        sendItemToAPI(value);
         dataObjectUpdated();
     }
 });
@@ -40,6 +41,7 @@ document.getElementById('item').addEventListener('keydown',function(e){
        document.getElementById('item').value= '';
 
        data.todo.push(value);
+       sendItemToAPI(value);
        dataObjectUpdated();
    }
 });
@@ -156,5 +158,22 @@ function completeItem(){
 
 }
 
+// Method for sending to-do item to API
+function sendItemToAPI(item){
+   var req = new XMLHttpRequest();
+   // When you add request/plan to list, it will add to
+   req.open('POST','/add');
 
+   // send request when run req open to make it possitble to add headers  and sent request to whether it is
+   req.send(JSON.stringify({item: item}));
 
+   req.addEventListener('load',()=>{
+    //    console.log(req.responseText);
+    console.log('Request done!')
+   });
+
+   req.addEventListener('error', ()=>{
+       console.log('Error, something bad happend.');
+       console.log(e);
+   });
+}
