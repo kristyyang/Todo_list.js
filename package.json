@@ -1,0 +1,23 @@
+{
+  "name": "Todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristyyang/Todo_list.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kristyyang/Todo_list.js/issues"
+  },
+  "homepage": "https://github.com/kristyyang/Todo_list.js#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
